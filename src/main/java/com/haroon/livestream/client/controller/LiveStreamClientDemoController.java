@@ -15,7 +15,7 @@ public class LiveStreamClientDemoController {
 
     @GetMapping(value = "/demo-live-stream-client", produces = "text/plain")
     public String getCustomersAsLiveStream() {
-        return customerService.getCustomers();
+        return customerService.processCustomerByConsumingLiveStream();
     }
 
 }
