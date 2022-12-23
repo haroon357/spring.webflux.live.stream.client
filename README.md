@@ -1,0 +1,1 @@
+this is a simple demo project that return Flux as  MediaType.TEXT_EVENT_STREAM_VALUE
