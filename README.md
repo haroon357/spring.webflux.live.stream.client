@@ -6,7 +6,13 @@ you can test his app using following curl
 curl http://localhost:8081/demo-live-stream-client
 
 
- Note: you will need to have a PostgreSQL database running locally and create customer_copy table as per schema present in /resources folder
-This service consume other service that is present at https://github.com/haroon357/spring.webflux.live.stream.server so you will need to run
-this spring.webflux.live.stream.server micro-service locally
-* check application.yaml so the database connection details point to your local db 
+
+**How To Run**
+* run postgres docker image loacally form https://hub.docker.com/_/postgres
+* connect to postgreSQL and create tables as per ...resources/sql/schema.sql
+* ensure the database port and user/password are correct in .../resources/application.yaml
+* Get Server side application from https://github.com/haroon357/spring.webflux.live.stream.server and run it locally
+  as per https://github.com/haroon357/spring.webflux.live.stream.client/blob/main/README.md
+* run your application and it will start at  port 8081
+* you check this client side application is working by running curl curl http://localhost:8081/demo-live-stream-client
+
