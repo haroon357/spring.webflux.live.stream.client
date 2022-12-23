@@ -22,8 +22,15 @@ public class CustomerServiceClient {
 
     private final static String BASE_URL = "http://localhost:8080/";
     @SneakyThrows
+    /**
+     * This method invoke another service that should be running locally at http://localhost:8080/customer that return TEXT_EVENT_STREAM of customer objects "
+     * please see https://github.com/haroon357/spring.webflux.live.stream.server
+     * it prcess the stream result and insert them in another customer_copy table
+     *
+     */
     public String processCustomerByConsumingLiveStream() {
         log.info("getting customers");
+        //use non-blocking web client to get TEXT_EVENT_STREAM over http and convert it to Flux
         webClient.get()
                 .uri("/customer")
                 .accept(MediaType.TEXT_EVENT_STREAM)

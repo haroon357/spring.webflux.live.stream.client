@@ -13,6 +13,10 @@ public class LiveStreamClientDemoController {
 
     private final CustomerServiceClient customerService;
 
+    /**
+     * Controller to demo consumer of live stream over http
+     * @return
+     */
     @GetMapping(value = "/demo-live-stream-client", produces = "text/plain")
     public String getCustomersAsLiveStream() {
         return customerService.processCustomerByConsumingLiveStream();
